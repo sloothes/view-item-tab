@@ -1,0 +1,100 @@
+<script>
+
+$(function(){
+    var component_ID = {
+        type: "tab",
+        version: 1.0,
+        kind: "component",
+        name: "buy-outfit-item-tab.html",
+        description: "displays outfit texture item.",
+    };
+});
+
+</script>
+
+
+<style>
+
+    .selected {
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(0, 142, 255, 1);
+    }
+
+    .texture-item-textfield {
+        width:70%;
+        float:right;
+    }
+
+    .product-item-value {
+        text-align: center;
+        font-size: x-large;
+        font-weight: bold;
+    }
+    
+    .x-large {
+        font-size: x-large;
+    }
+
+</style>
+
+<div class="helpers-header outfit-item-header" style="margin-bottom:20px;">
+    <h3 id="buy-item-title" class="text-center">Product title</h3>
+</div>
+
+<div class="product-master-preview" style="margin-bottom:20px;">
+    <img id="buy-item-preview" width="300" height="300" style="width:100%;max-width:300px;">
+</div>
+
+<input type="text" id="buy-item-value" class="form-control product-item-value" style="margin-bottom:20px;" disabled placeholder="Price">
+
+<div class="product-snapshots-container" style="margin-bottom:0px;overflow-x:scroll;overflow-y:hidden;max-width:300px;height:110px;">
+
+    <div id="buy-item-snapshots" class="product-snapshots" style="display:inline-block;width:max-content;height:95px;">
+        <li class="btn btn-default btn-white-outline catalog-item outfit-catalog-item"></li>
+        <li class="btn btn-default btn-white-outline catalog-item outfit-catalog-item"></li>
+        <li class="btn btn-default btn-white-outline catalog-item outfit-catalog-item"></li>
+        <li class="btn btn-default btn-white-outline catalog-item outfit-catalog-item"></li>
+        <li class="btn btn-default btn-white-outline catalog-item outfit-catalog-item"></li>
+        <li class="btn btn-default btn-white-outline catalog-item outfit-catalog-item"></li>
+    </div>
+
+</div>
+
+<div class="well product-description" style="height:250px;margin-bottom:20px;background:none;">
+    <h4 style="margin-top:0px;">Description:</h4>
+    <div style="max-height:180px;overflow:auto;">
+        Sed ac metus fermentum nisi lacinia sodales. Nullam porta tristique justo et laoreet. 
+        Vestibulum pulvinar, purus a finibus commodo, quam lectus imperdiet arcu, vel sollicitudin augue ligula quis lorem. 
+        Nunc vehicula lectus nec quam interdum, vitae mattis sapien iaculis. 
+        Duis et dui sed lorem hendrerit sollicitudin. Donec ut justo tincidunt, finibus nisi ut, fringilla augue. 
+        Donec a nibh nec libero pellentesque semper et vel lacus. Integer quis magna quam
+    </div>
+</div>
+
+<div id="buy-item-purchase-button" class="form-control btn btn-success btn-white-outline gradient-btn" style="margin-bottom:10px;">Purchase</div>
+
+<div class="product-basic-info" style="margin-bottom:20px;">
+    <div style="height:30px;"><h4 class="x-large">Sex:<input type="text" id="texture-gender" class="form-control texture-item-textfield" disabled placeholder="Outfit gender"></h4></div>
+    <div style="height:30px;"><h4 class="x-large">Slot:<input type="text" id="texture-slot" class="form-control texture-item-textfield" disabled placeholder="Outfit slot"></h4></div>
+    <div style="height:30px;"><h4 class="x-large">Kind:<input type="text" id="texture-cagetory" class="form-control texture-item-textfield" disabled placeholder="Texture cagegory"></h4></div>
+    <div style="height:30px;"><h4 class="x-large">Map:<input type="text" id="texture-map" class="form-control texture-item-textfield" disabled placeholder="Texture type (map)"></h4></div>
+    <div style="height:30px;"><h4 class="x-large">Design:<input type="text" id="designer-name" class="form-control texture-item-textfield" disabled placeholder="User name"></h4></div>
+</div>
+
+<div id="buy-item-test-button" class="form-control btn btn-info btn-white-outline gradient-btn" style="margin-bottom:10px;">Try it</div>
+
+
+<script>
+(function(){
+
+    $("#buy-item-snapshots").find(".outfit-catalog-item")
+    .on("click", function(){
+        debugMode && console.log(`count click events (buy)`);
+        const selector = ".outfit-catalog-item";
+        $(selector).removeClass("selected");
+        $(this).addClass("selected");
+    });
+
+})();
+</script>
+
+
